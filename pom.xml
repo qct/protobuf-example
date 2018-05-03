@@ -25,7 +25,7 @@
 
         <!-- protobuf paths -->
         <protobuf.input.directory>${project.basedir}/src/main/proto</protobuf.input.directory>
-        <protobuf.output.directory>${project.build.directory}/generated-sources</protobuf.output.directory>
+        <protobuf.output.directory>${project.build.sourceDirectory}</protobuf.output.directory>
 
         <os-maven-plugin.version>1.6.0</os-maven-plugin.version>
         <protobuf-java.version>3.5.1</protobuf-java.version>
@@ -135,25 +135,6 @@
                 </executions>
             </plugin>
 
-            <!-- add generated proto buffer classes into the package -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>add-classes</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${protobuf.output.directory}</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 </project>

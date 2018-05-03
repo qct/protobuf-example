@@ -1,7 +1,7 @@
 package com.example.protobuf.example;
 
 import com.example.protobuf.example.generated.vo.Hobby;
-import com.example.protobuf.example.generated.vo.HobbyOrBuilder;
+import com.example.protobuf.example.generated.vo.User;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,8 +21,10 @@ public class SpringBootTemplateApplication {
 
         @Override
         public void run(ApplicationArguments args) throws Exception {
-            Hobby build = Hobby.newBuilder().setLevel(1).build();
-            System.out.println(build);
+            Hobby hobby = Hobby.newBuilder().setName("swimming").setLevel(1).build();
+            User alice = User.newBuilder().setFirstName("alice").build();
+            System.out.println(hobby);
+            System.out.println(alice);
         }
     }
 }
